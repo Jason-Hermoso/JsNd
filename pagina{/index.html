@@ -7,100 +7,125 @@
     <style>
         /* Estilos generales */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f8fb; /* Azul claro */
+            background: radial-gradient(circle, #99ccff, #003366); /* Fondo más dinámico */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            color: white;
         }
         header {
-            background-color: #004080; /* Azul oscuro */
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .logo-container {
             text-align: center;
             margin-top: 20px;
         }
         .logo-container img {
-            max-width: 150px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 120px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            margin: 10px;
         }
         nav {
-            background-color: #0073e6; /* Azul brillante */
-            padding: 10px;
+            background: #004080;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+            width: 90%;
+            max-width: 600px;
         }
         nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px; /* Separación entre opciones */
         }
         nav ul li a {
             text-decoration: none;
+            font-size: 1.2em;
             color: white;
             font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s;
+            padding: 15px 30px;
+            border: 2px solid white;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
         }
         nav ul li a:hover {
-            background-color: #005bb5; /* Azul más oscuro */
+            color: #004080;
+            background: white;
+            transform: scale(1.1);
+            border-color: #004080;
         }
-        .banner {
+        #mono-section {
+            display: none; /* Oculto por defecto */
             text-align: center;
-            padding: 50px 20px;
             background-color: white;
-            border-radius: 8px;
-            margin: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: black;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+            width: 90%;
+            max-width: 600px;
+            animation: fadeIn 1s ease-in-out; /* Animación */
         }
-        .banner img {
-            max-width: 200px; /* Ajuste del tamaño de la imagen central */
+        #mono-section img {
+            max-width: 150px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .highlight {
-            background-color: #cce7ff; /* Azul suave */
-            padding: 15px;
-            border-left: 5px solid #0073e6;
             margin: 20px 0;
         }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .button {
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .button:hover {
+            background-color: #005bb5;
+            transform: scale(1.1);
+        }
         footer {
-            background-color: #003366; /* Azul marino */
+            background-color: #003366;
             color: white;
             text-align: center;
-            padding: 10px 0;
-        }
-        footer div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 15px;
+            border-radius: 10px;
+            width: 100%;
         }
         footer img {
             max-width: 40px;
             margin-left: 10px;
         }
-        .floating-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #0073e6;
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            border-radius: 50px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s;
-        }
-        .floating-button:hover {
-            background-color: #005bb5;
-        }
     </style>
+    <script>
+        // Mostrar la sección del mono cuando se haga clic en el botón
+        function mostrarMono() {
+            const monoSection = document.getElementById('mono-section');
+            monoSection.style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -118,23 +143,20 @@
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
-    <main>
-        <div class="banner">
-            <h2>Explora el mundo de la innovación</h2>
-            <p>Únete a nosotros para descubrir cómo combinar tecnología y creatividad para soluciones impactantes.</p>
-            <img src="mono.png" alt="Dibujo representativo">
-        </div>
-        <div class="highlight">
-            <h3>¿Por qué elegirnos?</h3>
-            <p>En Ingeniero Mercadólogo combinamos lo mejor de la ingeniería y el marketing para ofrecer soluciones únicas y personalizadas para nuestros clientes.</p>
-        </div>
-    </main>
+    <button class="button" onclick="mostrarMono()">¡Hola!</button>
+    <div id="mono-section">
+        <img src="mono.png" alt="Imagen del Mono">
+        <h3>¡Hola! Soy el Mono</h3>
+        <p>Algunos consejos de seguridad en línea:</p>
+        <ul>
+            <li>Usa contraseñas seguras y únicas para cada cuenta.</li>
+            <li>No compartas información personal en sitios desconocidos.</li>
+            <li>Actualiza regularmente tu software y antivirus.</li>
+        </ul>
+    </div>
     <footer>
-        <div>
-            <p>© 2025 Ingeniero Mercadólogo. Todos los derechos reservados.</p>
-            <img src="sip.png" alt="Ícono adicional">
-        </div>
+        <p>© 2025 Ingeniero Mercadólogo. Todos los derechos reservados.</p>
+        <img src="sip.png" alt="Ícono adicional">
     </footer>
-    <button class="floating-button" onclick="window.location.href='contacto.html'">Contáctanos</button>
 </body>
 </html>
