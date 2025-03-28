@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8fb; /* Azul claro */
+        }
+        header {
+            background: #004080; /* Azul oscuro */
+            color: white;
+            padding: 2em;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header h1 {
+            margin: 0;
+            animation: slideIn 1.5s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        main {
+            padding: 20px;
+            color: #004080; /* Texto oscuro para visibilidad */
+        }
+        .highlight {
+            background: #0073e6; /* Azul brillante */
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #004080; /* Azul oscuro */
+            color: white; /* Texto blanco para contraste */
+            position: relative;
+            animation: popIn 0.8s ease-out;
+        }
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        button {
+            background-color: #004080; /* Azul oscuro */
+            color: white; /* Texto blanco */
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 1.2em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #003366; /* Azul marino */
+            transform: scale(1.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #004080; /* Azul oscuro */
+            color: white; /* Texto blanco */
+        }
+        td {
+            padding: 10px;
+            text-align: left;
+            color: #004080; /* Texto oscuro para visibilidad */
+        }
+        .modal {
+            display: none; /* Oculta inicialmente */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            z-index: 1000;
+            color: #004080; /* Texto visible */
+        }
+        .modal.active {
+            display: block; /* Muestra el modal */
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .overlay.active {
+            display: block;
+        }
+        .tips {
+            background-color: #004080; /* Azul oscuro */
+            color: white; /* Texto blanco */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Guía Básica de Marketing Digital</h1>
+    </header>
+    <main>
+        <section class="highlight">
+            <h2>¿Qué es el Marketing Digital?</h2>
+            <p>El marketing digital utiliza plataformas digitales para promocionar productos, servicios o marcas, llegando a un amplio público en línea.</p>
+            <button id="learnMoreButton">Conoce Más</button>
+        </section>
+
+        <h2>Puntos Clave del Marketing Digital</h2>
+        <ul>
+            <li>Uso de redes sociales para crear comunidades y fortalecer la imagen de marca.</li>
+            <li>Estrategias de SEO para mejorar la visibilidad y el tráfico orgánico en motores de búsqueda.</li>
+            <li>Marketing de contenido para educar e informar a los clientes potenciales.</li>
+            <li>Publicidad en línea dirigida a segmentos específicos del mercado.</li>
+        </ul>
+
+        <h2>Beneficios del Marketing Digital</h2>
+        <ul>
+            <li>Costos más bajos en comparación con el marketing tradicional.</li>
+            <li>Resultados medibles y análisis en tiempo real para ajustar estrategias.</li>
+            <li>Capacidad de personalizar mensajes y campañas según las necesidades de la audiencia.</li>
+            <li>Mayor alcance a nivel global y mejores opciones de segmentación.</li>
+        </ul>
+
+        <h2>Consejos Prácticos</h2>
+        <div class="tips">
+            <h3>Consejo #1</h3>
+            <p>Utiliza herramientas como Google Analytics para comprender mejor a tu audiencia.</p>
+        </div>
+        <div class="tips">
+            <h3>Consejo #2</h3>
+            <p>Invierte en campañas de publicidad pagada para obtener resultados más rápidos.</p>
+        </div>
+
+        <h2>Comparación de Plataformas Digitales</h2>
+        <table>
+            <tr>
+                <th>Plataforma</th>
+                <th>Audiencia Principal</th>
+                <th>Ventajas</th>
+            </tr>
+            <tr>
+                <td>Facebook</td>
+                <td>Todas las edades</td>
+                <td>Alcance global y comunidad activa.</td>
+            </tr>
+            <tr>
+                <td>Instagram</td>
+                <td>Jóvenes adultos</td>
+                <td>Foco en lo visual y alta interacción.</td>
+            </tr>
+            <tr>
+                <td>LinkedIn</td>
+                <td>Profesionales</td>
+                <td>Networking profesional y contenido educativo.</td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <p>© 2025 Ingeniero Mercadologo. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <h2>Conoce más sobre Marketing Digital</h2>
+        <p>Visita nuestro grupo de Facebook para aprender más:</p>
+        <a href="https://www.facebook.com/groups/2114789775649278/?ref=share&mibextid=NSMWBT" target="_blank">Haz clic aquí</a>
+        <button onclick="closeModal()">Cerrar</button>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <script>
+        // Función para abrir el modal
+        document.getElementById('learnMoreButton').addEventListener('click', function() {
+            document.getElementById('modal').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        });
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

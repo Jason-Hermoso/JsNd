@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería en Sistemas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8fb; /* Azul claro */
+        }
+        header {
+            background-color: #004080; /* Azul oscuro */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        main {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            color: #004080; /* Texto visible en fondo claro */
+        }
+        .highlight {
+            background-color: #0073e6; /* Azul brillante */
+            padding: 15px;
+            border-left: 5px solid #004080; /* Azul oscuro */
+            margin: 20px 0;
+            color: white; /* Texto blanco */
+        }
+        ul {
+            list-style: square;
+            padding-left: 20px;
+            color: #004080; /* Color visible en blanco */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #004080; /* Azul oscuro */
+            color: white; /* Texto blanco */
+            padding: 10px;
+        }
+        td {
+            padding: 10px;
+            text-align: left;
+            color: #004080; /* Texto oscuro para fondo claro */
+        }
+        footer {
+            background-color: #003366; /* Azul marino */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        button {
+            background-color: #004080; /* Azul oscuro */
+            color: white; /* Texto blanco */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #003366; /* Azul marino */
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            z-index: 1000;
+            color: #004080; /* Texto visible */
+        }
+        .modal.active {
+            display: block; /* Mostrar el modal */
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .overlay.active {
+            display: block; /* Mostrar la superposición */
+        }
+        .tips {
+            background-color: #004080; /* Azul oscuro */
+            color: white; /* Texto blanco */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .additional-section {
+            margin-top: 20px;
+        }
+        .additional-section h3 {
+            color: #003366; /* Azul marino */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ingeniería en Sistemas</h1>
+    </header>
+    <main>
+        <div class="highlight">
+            <h2>¿Qué es la Ingeniería en Sistemas?</h2>
+            <p>La ingeniería en sistemas computacionales se dedica al diseño, desarrollo y mantenimiento de soluciones tecnológicas. Algunos de sus enfoques principales son:</p>
+            <ul>
+                <li>Desarrollo de software</li>
+                <li>Ciberseguridad</li>
+                <li>Análisis de datos</li>
+                <li>Inteligencia artificial</li>
+            </ul>
+            <button id="learnMore">Conoce más</button>
+        </div>
+
+        <h2>Aplicaciones de la Ingeniería en Sistemas</h2>
+        <ul>
+            <li>Automatización de procesos en empresas.</li>
+            <li>Desarrollo de aplicaciones web y móviles.</li>
+            <li>Gestión eficiente de bases de datos.</li>
+            <li>Implementación de sistemas inteligentes.</li>
+        </ul>
+
+        <h2>Beneficios Clave</h2>
+        <table>
+            <tr>
+                <th>Beneficio</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td>Innovación</td>
+                <td>Aplicación de tecnologías avanzadas para resolver problemas complejos.</td>
+            </tr>
+            <tr>
+                <td>Escalabilidad</td>
+                <td>Desarrollo de sistemas que crecen junto con las necesidades del usuario.</td>
+            </tr>
+            <tr>
+                <td>Optimización</td>
+                <td>Mejora continua de procesos para mayor eficiencia.</td>
+            </tr>
+            <tr>
+                <td>Seguridad</td>
+                <td>Implementación de medidas que protegen datos y sistemas.</td>
+            </tr>
+        </table>
+
+        <div class="tips">
+            <h3>Consejo Práctico</h3>
+            <p>Siempre actualiza tus conocimientos sobre lenguajes de programación y nuevas tecnologías.</p>
+        </div>
+
+        <div class="additional-section">
+            <h3>Impacto de la Ingeniería en Sistemas</h3>
+            <p>La Ingeniería en Sistemas ha transformado industrias como la salud, el comercio y la educación al desarrollar soluciones digitales adaptadas a sus necesidades.</p>
+            <ul>
+                <li>Implementación de expedientes médicos electrónicos en hospitales.</li>
+                <li>Desarrollo de plataformas de comercio electrónico para empresas.</li>
+                <li>Creación de herramientas de aprendizaje virtual en educación.</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Ingeniero Mercado Logo. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <h3>Más sobre Ingeniería en Sistemas</h3>
+        <p>La ingeniería en sistemas también abarca la implementación de redes, el desarrollo de soluciones en la nube y la optimización tecnológica para empresas.</p>
+        <button onclick="closeModal()">Cerrar</button>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <script>
+        // Función para abrir el modal
+        document.getElementById('learnMore').addEventListener('click', function() {
+            document.getElementById('modal').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        });
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
